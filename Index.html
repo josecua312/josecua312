@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="App.js" defer></script>
+    <title>CAPS_STORE🔥</title>
+</head>
+<body>
+ <!-- MODAL DE AUTENTICACIÓN USUARIO -->
+<div id="auth-modal" class="auth-modal">
+  <div class="auth-content">
+    <span id="close-auth-modal" class="close-auth-modal">&times;</span>
+    
+    <!-- FORMULARIO LOGIN -->
+    <form id="login-form">
+      <h2>INICIAR SESION✅</h2>
+      <input type="text" id="login-usuario" placeholder="Usuario" />
+      <input type="password" id="login-contrasena" placeholder="Contraseña" />
+      <button type="button" id="btn-ingresar">Ingresar</button>
+      <a id="show-register">¿No tienes cuenta? Regístrate</a>
+    </form>
+
+    <!-- FORMULARIO REGISTRO -->
+    <form id="register-form" style="display:none;">
+      <h2>CREAR CUENTA🔒</h2>
+      <input type="text" id="nuevo-usuario" placeholder="Usuario" />
+      <input type="email" id="nuevo-correo" placeholder="Correo" />
+      <input type="password" id="nuevo-contrasena" placeholder="Contraseña" />
+      <button type="button" id="btn-crear-cuenta">Crear Cuenta</button>
+      <a id="show-login">¿Ya tienes cuenta? Inicia sesión</a>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL LOGIN ADMIN -->
+<div id="admin-login-modal" class="auth-modal">
+  <div class="auth-content">
+    <span id="close-admin-login-modal" class="close-auth-modal">&times;</span>
+    <h2>ADMIN🛡️🖥️</h2>
+    <input type="text" id="admin-login-usuario" placeholder="Usuario Admin" />
+    <input type="password" id="admin-login-contrasena" placeholder="Contraseña Admin" />
+    <button type="button" id="btn-admin-ingresar">Ingresar</button>
+  </div>
+</div>
+<!-- TOAST -->
+<div id="toast-message" class="toast-message"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo CAPS_STORE">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio"><b>INICIO</b></a></li>
+            <li><a href="#servicios"><b>SERVICIOS</b></a></li>
+            <li><a href="#contacto"><b>CONTACTO</b></a></li>
+            <li><a href="#acerca"><b>INFORMACION</b></a></li>
+        </ul>
+        <button id="show-auth-modal" class="btn-login">USUARIO👨 </button>
+        <button id="show-admin-login-modal" class="btn-login">ADMIN🛡️</button>
+        <button class="cart-btn" id="cart-btn" style="border-radius:50%; padding:4px; background:#fff; border:2px solid #222; margin-left:10px;">
+            <img src="carrito.jpg" alt="Carrito" style="width:32px;height:32px; border-radius:50%;">
+        </button>
+    </nav>
+
+    <!-- Modal Carrito -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <h3>Carrito de Compras</h3>
+            <ul id="cart-items"></ul>
+            <button id="enviar-pedido" style="background:#25D366; color:#fff; border:none; border-radius:6px; padding:10px 18px; margin-bottom:10px; font-weight:bold; cursor:pointer;">Enviar</button>
+            <button id="close-cart">Cerrar</button>
+        </div>
+    </div>
+
+    <header id="inicio" class="hero-section">
+        <h1>CAPS_STORE🔥</h1>
+        <p><b>¡Estilo urbano, comodidad única. Gorras que marcan tendencia!</b></p>
+        <a href="#servicios" class="btn-primary">Descubrir Más</a>
+    </header>
+
+    <main>
+        <section id="servicios" class="cards-container">
+            <h2>Nuestros Servicios😎</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Gorra new  era </h3>
+                    <img src="primera.jpg" alt="Gorra New Era">
+                    <p><b>Vive el estilo siente la tradición viste new era.⚡</b></p>
+                    <p> 💲<b>30.000</b></p>
+                    <button class="add-to-cart" data-name="GORRA NEW ERA" data-price="30000" data-img="primera.jpg">Agregar al carrito</button>
+                </div>
+                <div class="card">
+                    <h3>Gorra de maya</h3>
+                    <img src="segunda.jpg" alt="Gorra de Maya">
+                    <p><b>Pontela y que hablen los demás.✅</b></p>
+                    <p> 💲<b>30.000</b></p>
+                    <button class="add-to-cart" data-name="GORRA DE MAYA" data-price="30000" data-img="segunda.jpg">Agregar al carrito</button>
+                </div>
+                <div class="card">
+                    <h3>Gorra de broches</h3>
+                    <img src="ultimagorra.jpg" alt="Gorra de Broches">
+                    <p><b>No solo la uses, hazla parte de ti.🔥</b></p>
+                    <p>💲<b>25.000</b></p>
+                    <button class="add-to-cart" data-name="GORRA DE BROCHES" data-price="25000" data-img="ultimagorra.jpg">Agregar al carrito</button>
+                </div>
+                <div class="card">
+                   <h3>Gorra plana urbana</h3>
+                   <img src="plana.jpg" alt="Gorra Plana Urbana">
+                    <p><b>Para los que marcan la diferencia.💥</b></p>
+                    <p>💲<b>30.000</b></p>
+                       <button class="add-to-cart" data-name="GORRA PLANA URBANA" data-price="30000" data-img="plana.jpg">Agregar al carrito</button>
+                 </div>
+
+<div class="card">
+  <h3>Gorra atlanta</h3>
+  <img src="Atlanta.jpg" alt="Gorra atlanta">
+  <p><b>Sencilla pero poderosa.👌</b></p>
+  <p>💲<b>28.000</b></p>
+  <button class="add-to-cart" data-name="GORRA ATLANTA" data-price="28000" data-img="Atlanta.jpg">Agregar al carrito</button>
+</div>
+
+<div class="card">
+  <h3>Gorra westcol</h3>
+  <img src="westcol.jpg" alt="Gorra westcol">
+  <p><b>Combina con todo. Estilo callejero.🔫</b></p>
+  <p>💲<b>33.000</b></p>
+  <button class="add-to-cart" data-name="GORRA WESTCOL " data-price="33000" data-img="westcol.jpg">Agregar al carrito</button>
+</div>
+
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <h2>Contacto☎️</h2>
+            <form id="contact-form" method="POST" action="/send_email">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <div id="toast-message" class="toast-message"></div>
+       
+        <section id="acerca" class="about-section">
+            <h2>INFORMACION 💬</h2>
+            <p><b>Horario de atención:</b> Lunes a Viernes: 8:00AM - 6:00PM <b>Sábado:</b> 7:00AM - 2:00PM</p>
+            <p><b>Dirección:</b> CLL 28A #3-40 BARRIO LA GRACIA DE DIOS</p>
+            <p><b>Ciudad:</b> SANTIAGO DE TOLU-SUCRE</p>
+            <h3><b>¿Cómo contactarnos?</b></h3>
+            <p><b>Correo electrónico:</b> caps.store20@gmail.com</p>
+            <p><b>Celular:</b> (+57) 3043057073</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CAPS_STORE🔥. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Redes sociales flotantes -->
+    <div class="social-float">
+        <a href="https://www.instagram.com/caps_store204?igsh=MXRmN3l6anpxNTNsbg==" target="_blank" class="social-icon instagram" title="Instagram">
+            <img src="Instagram.jpg" alt="Instagram">
+        </a>
+        <a href="https://wa.me/573043057073" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+            <img src="whatsapp.jpg" alt="WhatsApp">
+        </a>
+    </div>
+<!-- Perfil flotante -->
+<div id="user-profile" class="user-profile" style="display:none;">
+  <img src="Usuario.jpg" alt="Perfil" class="profile-icon" id="toggle-profile">
+  <div id="profile-dropdown" class="profile-dropdown">
+    <div class="profile-header">
+      <span id="cerrar-dropdown" class="close-profile">×</span>
+    </div>
+    <p><strong>👤 Usuario:</strong> <span id="perfil-usuario"></span></p>
+    <p><strong>📧 Correo:</strong> <span id="perfil-correo"></span></p>
+    <button id="cerrar-sesion" class="btn-logout">Cerrar sesión</button>
+  </div>
+</div>
+
+
+
+
+<div id="toast-message" class="toast-message"></div>
+</body>
+</html>
